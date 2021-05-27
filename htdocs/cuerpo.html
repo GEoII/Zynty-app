@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>cuerpo</title>
+	
+	<link rel="stylesheet" href="../styles/content-app.css">
+	<link rel="stylesheet" href="../media/icons/icons.css">
+	<link rel="icon" href="../media/icon.ico">
+
+</head> 
+<body>
+	
+    <header id="header">
+        <div class="nav-sup-div">
+            <a href="#" class="nav-a">Zynty</a>
+            <span class="icon-menu ico" id="iconav">
+            </span>
+        </div>
+    </header>
+        <nav class="nav-sup activar" id="menu">
+            <ul>
+                <li><a href="#">Configuracion</a></li>
+                <li><a href="#">Analisis</a></li>
+                <li><a href="#">Terminos</a></li>
+            </ul>
+        </nav>
+
+	<section class="content-load">
+		<div class="page" id="page"></div>
+	</section>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div class="container" id="contenido"></div>
+		<button type="button" id="btnCargar">Cargar</button>
+	</div>
+
+
+	<footer>
+		<nav class="nav-inf">
+			<ul>
+				<li>
+					<a href="#" class="nav-a sec">
+						<p class="icon-home3 ico"><br>Inicio</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="nav-a sec">
+						<p class="icon-search ico"><br>Buscar</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="nav-a sec">
+						<p class="icon-cart ico"><br>Carrito</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="nav-a sec">
+						<p class="icon-bubbles ico"><br>Chat</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="nav-a sec">
+						<p class="icon-user ico"><br>Cuenta</p>
+					</a>
+				</li>
+			</ul>
+		</nav> 
+	</footer>
+
+	<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script type="text/javascript">
+		
+		$('#btnCargar').click(function(){
+			var esperar = 2000;
+			$.ajax({
+				url: "section_inicio.html",
+				beforeSend : function(){
+					$('#contenido').text('Cargando...');
+				} , 
+
+				success : function(data){
+					setTimeout(function(){
+						$('section_inicio').html(data);
+					},esperar
+					);
+				}
+
+			});	
+		});
+
+	</script>
+
+</body>
+</html>
